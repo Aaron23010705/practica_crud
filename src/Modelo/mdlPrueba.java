@@ -23,6 +23,10 @@ public class mdlPrueba {
  private String Fecha;
     private String Motivo;
     private String Descripcion;
+    private String UUID_veterinaria;
+   private String UUID_mascota;
+   private String UUID_Usuario;
+   private String Estado;
 
     public String getUUID_veterinaria() {
         return UUID_veterinaria;
@@ -47,9 +51,15 @@ public class mdlPrueba {
     public void setUUID_Usuario(String UUID_Usuario) {
         this.UUID_Usuario = UUID_Usuario;
     }
-   private String UUID_veterinaria;
-   private String UUID_mascota;
-   private String UUID_Usuario;
+   
+
+    public String getEstado() {
+        return Estado;
+    }
+
+    public void setEstado(String Estado) {
+        this.Estado = Estado;
+    }
 
     
     public String getFecha() {
