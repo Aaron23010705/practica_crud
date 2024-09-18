@@ -69,7 +69,7 @@ public class denegar_cita extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 730, 180));
 
-        btnDenegar.setText("Asignar cita");
+        btnDenegar.setText("Denegar cita");
         jPanel1.add(btnDenegar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

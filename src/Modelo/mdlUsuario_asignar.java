@@ -5,9 +5,11 @@
 package Modelo;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.UUID;
 import javax.swing.JComboBox;
 
 /**
@@ -98,21 +100,20 @@ public class mdlUsuario_asignar {
     
     
     //Metodo para cargar los valores en el ComboBox
-    public void CargarComboUsuarios_asignar(JComboBox comboBox){    
+    public void CargarComboUsuarios_asignar(JComboBox comboBox) throws SQLException{    
         Connection conexion = ClaseConexion.getConexion();
         comboBox.removeAllItems();
-        try{
-            Statement statement = conexion.createStatement();
-            ResultSet rs = statement.executeQuery("Select * from tbUsuariosOne");
-            while (rs.next()) {
-                String uuid = rs.getString("UUID_Usuario");
-                String nombre = rs.getString("nombre_usuario");
-                comboBox.addItem(new mdlUsuario_asignar(uuid,nombre));                
-            }
-        }
-        catch(SQLException ex)
-        {
-            
-        }
+        
+     Statement statement = conexion.createStatement();
+ResultSet rs = statement.executeQuery("Select UUID_usuario, nombre_usuario from tbUsuariosOne where rol = 'Empleado'");
+
+while (rs.next()) {
+    String uuid = rs.getString("UUID_usuario");
+    String nombre = rs.getString("nombre_usuario");
+    comboBox.addItem(new mdlUsuario_asignar(uuid, nombre));
+}
     }
 }
+
+
+
